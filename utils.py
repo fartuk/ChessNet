@@ -54,6 +54,7 @@ def move2tensor(move_str):
     elif diff_x == - diff_y:
         move_type = 3
         result[move_type * 8 + move_to[1]] = 1
+    # Knife move
     elif np.abs(diff_x * diff_y) == 2:
         move_type = 4
         result[move_type * 8 + knife_mapa[diff_x, diff_y]] = 1
@@ -78,13 +79,10 @@ def tensor2move(move_tensor):
     # Second diagonal move
     elif move_type == 3:
         move_to_str = coord2str(y - (n % 8 - x), n % 8)
+    # Knife move
     elif move_type == 4:
         diff_x, diff_y = knife_mapa[n % 8]
         move_to_str = coord2str(y + diff_y, x + diff_x)
         
-        
     return move_from_str + move_to_str
-
-
-
 
