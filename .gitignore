@@ -1,0 +1,6 @@
+data/
+old_develop/
+stockfish/
+__pycache__/
+*h5
+.ipynb_*
